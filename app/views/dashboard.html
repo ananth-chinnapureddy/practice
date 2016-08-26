@@ -1,0 +1,24 @@
+<div class="row">
+    <login-template></login-template>
+</div>
+<div class="row" ng-if="tableDatasource.length > 0">
+    <table ng-table="tableParams" class="table table-striped" show-filter="true">
+        <tr ng-repeat="itemData in $data">
+            <td title="'ID'">
+                {{itemData.userId}}</td>
+            <td title="'Title'" filter="{ title: 'text'}" sortable="'title'">
+                {{itemData.title}}</td>
+            <td title="'Body'">{{itemData.body}}</td>
+            <td>
+                <button type="button" class="btn btn-default" ng-click="editItem(itemData)">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-default" ng-click="removeItem(itemData)">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>

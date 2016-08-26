@@ -1,0 +1,72 @@
+<div class="container-fluid">
+    <ul class="nav nav-tabs">
+        <li><a href="./#/landing">Back</a></li>
+    </ul>
+</div>
+<div class="container-fluid">
+    <form name="formsign" novalidate>
+        <h1>Shipping Contact</h1>
+        <div class="row">
+            <div class="form-group col-lg-4 col-xs-12">
+                <input type="text" ng-model="firstname" class="form-control" placeholder="Firstname" name="firstname" autocomplete="off" ng-minlength="5" ng-maxlength="50" maxlength="50" ng-pattern=".{8,}" required>
+                <div ng-messages="formsign.firstname.$error" ng-show="((formsign.$submitted || !formsign.firstname.$pristine) && formsign.firstname.$error)" class="text-danger">
+                    <div ng-message="required"><span>First Name is reqired </span></div>
+                    <div ng-message="minlength"><span>Minimum 5 char is reqired </span></div>
+                    <div ng-message="maxlength">Message must not exceed 50 characters</div>
+                </div>
+            </div>
+            <div class="form-group col-lg-8 col-xs-12 ">
+                <input type="text" ng-model="lastname" class="form-control" placeholder="lastname" name="lastname" autocomplete="off" ng-minlength="5" ng-maxlength="50" maxlength="50" ng-pattern=".{8,}" required>
+                <div ng-messages="formsign.lastname.$error" ng-show="((formsign.$submitted || !formsign.lastname.$pristine) && formsign.lastname.$error)" class="text-danger">
+                    <div ng-message="required"><span>last Name is reqired </span></div>
+                    <div ng-message="minlength"><span>Minimum 5 char is reqired </span></div>
+                    <div ng-message="maxlength">Message must not exceed 50 characters</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-lg-2 col-xs-12">
+                <input id="password" class="form-control" type="password" name="password" title="Enter username" ng-model="price" ng-pattern="/^[0-9]{1,7}$/" required/>
+                <div ng-messages="formsign.password.$error" ng-show="((formsign.$submitted || !formsign.password.$pristine) && formsign.password.$error)" class="text-danger">
+                    <div ng-message="required"><span>This field is required! </span></div>
+                    <div ng-message="pattern"><span>Not a valid number! </span></div>
+                </div>
+            </div>
+            <div class="form-group col-lg-10 col-xs-12">
+                <input id="phonenumber" class="form-control" type="number" name="phonenumber" title="Enter phone number" ng-model="phonenumber" placeholder="Enter phone number" ng-pattern="/^[(]{0,1}[0-9]{3}[)\.\- ]{0,1}[0-9]{3}[\.\- ]{0,1}[0-9]{4}$/" required/>
+                <div ng-messages="formsign.phonenumber.$error" ng-show="((formsign.$submitted || !formsign.phonenumber.$pristine) && formsign.phonenumber.$error)" class="text-danger">
+                    <div ng-message="required"><span>This field is required! </span></div>
+                    <div ng-message="pattern"><span>Not a valid number! </span></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-lg-11 col-xs-12>
+                <input name=" emailStr " type="email " class="form-control " autocomplete="off " ng-model="signFormData.emailStr " placeholder="Enter your Email ">
+                <div ng-messages="formsign.emailStr.$error " ng-show="((formsign.$submitted || !formsign.emailStr.$pristine) && formsign.emailStr.$error) " class="text-danger ">
+                    <div ng-message="email ">{{ 'email-error' | translate }}</div>
+                </div>
+            </div>
+        </div>
+        <h1>Shipping Address</h1>
+        <div class="row ">
+            <div class="form-group col-lg-12 col-xs-12 ">
+                <input type="text " ng-model="address " name="address " ng-pattern="/^[a-zA-Z ]{1,25}$/ " placeholder="Enter address " class="form-control " autocomplete="off " required/>
+                <div ng-messages="formsign.address.$error " ng-show="((formsign.$submitted || !formsign.address.$pristine) && formsign.address.$error) " class="text-danger ">
+                    <div ng-message="required ">This field is required!</div>
+                    <div ng-message="pattern ">{{ 'address' | translate }}</div>
+                </div>
+            </div>
+            <div class="form-group col-lg-2 col-xs-12 ">
+                <input type="number " class="form-control " placeholder="Zip Code " name="zipcode " autocomplete="off " ng-model="zipcode " ng-pattern="/^\d{5}$/ " required>
+                <div ng-messages="formsign.zipcode.$error " ng-show="((formsign.$submitted || !formsign.zipcode.$pristine) && formsign.zipcode.$error) " class="text-danger ">
+                    <div ng-message="required ">This field is required!</div>
+                    <div ng-message="pattern ">{{ 'zipcode' | translate }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="row col-lg-4 col-xs-12 ">
+            <button type="submit " class="btn btn-primary " ng-click="authenticationlogin (formsign) ">submit</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,76 @@
+<div class="container-fluid">
+    <ul class="nav nav-tabs">
+        <li><a href="./#/landing">Back</a></li>
+    </ul>
+</div>
+<div class="container-fluid">
+    <form name="mysignform" class="col-lg-6 col-sm-offset-2 col-md-6 col-md-offset-0" novalidate>
+        <h1>{{ 'User Registration form' | translate }}</h1>
+        <div class="form-group">
+            <div class="row">
+                <label>Name</label>
+                <input type="text" name="username" ng-model="user.username" placeholder="Enter your name" class="form-control" ng-minlength="5" ng-maxlength="50" maxlength="50" required>
+                <div ng-messages="mysignform.username.$error" ng-show="((mysignform.$submitted || !mysignform.username.$pristine) && mysignform.username.$error)" class="text-danger">
+                    <div ng-message="required"><span>User Name is reqired </span></div>
+                    <div ng-message="minlength"><span>Minimum 5 char is reqired </span></div>
+                    <div ng-message="maxlength">Message must not exceed 50 characters</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <label>Address</label>
+                <input type="text" name="address" ng-model="user.address" placeholder="Enter Your Address" class="form-control" ng-pattern="/^[a-zA-Z ]{1,25}$/" required>
+                <div ng-messages="mysignform.address.$error" ng-show="((mysignform.$submitted || !mysignform.address.$pristine) && mysignform.address.$error)" class="text-danger">
+                    <div ng-message="required">This field is required!</div>
+                    <div ng-message="pattern">{{ 'address' | translate }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <label>Email</label>
+                <input type="email" name="emailstr" ng-model="user.emailstr" placeholder="Enter your  Email" class="form-control" autocomplete="off">
+                <div ng-messages="mysignform.emailstr.$error" ng-show="((mysignform.$submitted || !mysignform.emailstr.$pristine) && mysignform.emailstr.$error)" class="text-danger">
+                    <div ng-message="email">{{ 'email-error' | translate }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <!-- <input type="submit" value="Submit" ng-click="submit()">  -->
+                <button type="submit" class="btn btn-primary" ng-click="submit()" ng-disabled="mysignform.$invalid">Add</button>
+                <button type="submit" class="btn btn-warning" ng-click="reset()" ng-disabled="mysignform.$pristine">Reset Form</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading"><span class="lead">List of Users </span></div>
+    <div class="tablecontainer">
+        <table class="table table-bordered">
+            <thead> 
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in users track by $index">
+                    <td><span>{{user.id}}</span></td>
+                    <td><span>{{user.username}}</span></td>
+                    <td><span>{{user.address}}</span></td>
+                    <td><span>{{user.emailstr}}</span></td>
+                    <td>
+                        <button type="submit" class="btn btn-primary" ng-click="edit(user.id)">Edit</button>
+                        <button type="submit" class="btn btn-primary" ng-click="remove(user.id)">remove</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

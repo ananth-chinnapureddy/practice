@@ -1,0 +1,45 @@
+<div class="row">
+    <form name="myform" novalidate>
+        <div>
+            <label>EmpId</label>
+            <span>{{ EmpModel.Id}}</span>
+        </div>
+        <div>
+            <label>Name:</label>
+            <input type="text" name="username" ng-model="EmpModel.username" class="form-control" placeholder="EmpName Required" required>
+        </div>
+        <div>
+            <label>Salary</label>
+            <input type="number" name="salary" ng-model="EmpModel.Salary" class="form-control" placeholder="salary Required" required>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" ng-click="submit()" ng-disabled="myform.$invalid">Add</button>
+            <button type="submit" class="btn btn-warning" ng-click="reset()" ng-disabled="myform.$pristine">Reset Form</button>
+        </div>
+    </form>
+</div>
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading"><span class="lead">List of Users </span></div>
+    <div class="tablecontainer">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="EmpModel in users">
+                    <td><span>{{EmpModel.Id}}</span></td>
+                    <td><span>{{EmpModel.username}}</span></td>
+                    <td><span>{{EmpModel.Salary}}</span></td>
+                    <td>
+                        <button type="submit" class="btn btn-primary" ng-click="remove(EmpModel.Id)">remove</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
