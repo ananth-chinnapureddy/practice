@@ -1,8 +1,9 @@
 (function () {
     'use strict';
-    mainApp.controller("formLayoutCtrl", ['$scope', '$log', 'appConstant', '$translate', formLayoutCtrl]);
+    mainApp.controller("formLayoutCtrl", ['$scope', '$log', 'appConstant', '$rootScope', '$translate', formLayoutCtrl]);
 
-    function formLayoutCtrl($scope, $log, appConstant, $translate) {
+    function formLayoutCtrl($scope, $log, appConstant,$rootScope, $translate) {
+        $rootScope.car = "Volvo";
         var vm = $scope;
         vm.name = "Volvo";
         vm.formData = {};

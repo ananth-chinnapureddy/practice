@@ -1,4 +1,4 @@
-var mainApp = angular.module('mainApp', ['ngRoute', 'ngMessages', 'pascalprecht.translate', 'ui.bootstrap', 'ngTable']);
+var mainApp = angular.module('mainApp', ['ui.bootstrap', 'ngRoute', 'ngMessages', 'pascalprecht.translate', 'ngTable']);
 (function () {
     'use strict';
     mainApp.config(['$routeProvider', '$translateProvider', 'appConstant', myConfigFun
@@ -40,9 +40,7 @@ var mainApp = angular.module('mainApp', ['ngRoute', 'ngMessages', 'pascalprecht.
                 controller: 'tabledataCtrl'
             })
             .when(appConstant.showdata, {
-                templateUrl: appConstant.filesPath + 'showdata.html',
-                controller: 'showdataCtrl',
-                controllerAs: 'show'
+                templateUrl: appConstant.filesPath + 'showdata.html'               
             })
             .when(appConstant.landing, {
                 templateUrl: appConstant.filesPath + 'landing.html'
@@ -55,5 +53,6 @@ var mainApp = angular.module('mainApp', ['ngRoute', 'ngMessages', 'pascalprecht.
 
     function myRunFn($rootScope, $log) {
         $log.debug('app started.');
+        $rootScope.car = "shift";
     }
 })();

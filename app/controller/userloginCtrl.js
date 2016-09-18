@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    mainApp.controller("userloginCtrl", ['$scope', '$location', '$translate', '$uibModal', 'appConstant', userloginCtrl]);
+    mainApp.controller("userloginCtrl", ['$scope', '$location', '$translate', 'appConstant', '$uibModal', userloginCtrl]);
 
     function userloginCtrl($scope, $location, $translate, appConstant, $uibModal) {
         // $scope.myName = "ananth";
@@ -31,7 +31,7 @@
                 }
             }
         }
-        vm.remove = function (id,size) {
+        vm.remove = function (size, id) {
             console.log('id to be deleted', id);
             for(var i = 0; i < vm.users.length; i++) {
                 if(vm.users[i].id === id) {
@@ -44,12 +44,12 @@
             }
             var modalInstance = $uibModal.open({
                 templateUrl: 'myModalContent.html',
-                size: size
-                    // resolve: {
-                    //     items: function () {
-                    //         return $scope.items;
-                    //     }
-                    // }
+                size: size,
+                // resolve: {
+                //     items: function () {
+                //         return $scope.items;
+                //     }
+                // }
             });
         }
         vm.reset = function () {

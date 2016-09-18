@@ -1,51 +1,52 @@
 <!DOCTYPE html>
-<html lang="en" <head ng-app="mainApp">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Student</title>
-<link href="./app/lib/css/bootstrap.min.css" rel="stylesheet">
-<link href="./app/lib/css/bootstrap-switch.css" rel="stylesheet">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="./app/lib/css/ng-table.min.css" rel="stylesheet">
-<link href="./app/lib/css/mysite.css" rel="stylesheet">
-<script src="./app/lib/js/jquery.min.js"></script>
-<script src="./app/lib/js/bootstrap.min.js"></script>
-<script src="./app/lib/js/angular.min.js"></script>
-<script src="./app/lib/js/angular-route.min.js"></script>
-<script src="./app/lib/js/angular-messages.min.js"></script>
-<!--<script src="./app/lib/js/ui-bootstrap-tpls-0.11.0.js"></script> -->
-<script src="./app/lib/js/ng-table.js"></script>
-<script src="./app/lib/js/bootstrap-switch.js"></script>
-<script src="./app/lib/js/ui-bootstrap-tpls-1.3.2.min.js"></script>
-<!-- Localization support 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student</title>
+    <link href="./app/lib/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./app/lib/css/bootstrap-switch.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="./app/lib/css/ng-table.min.css" rel="stylesheet">
+    <link href="./app/lib/css/mysite.css" rel="stylesheet">
+    <script src="./app/lib/js/jquery.min.js"></script>
+    <script src="./app/lib/js/bootstrap.min.js"></script>
+    <script src="./app/lib/js/angular.min.js"></script>
+    <script src="./app/lib/js/angular-route.min.js"></script>
+    <script src="./app/lib/js/angular-messages.min.js"></script>
+    <script src="./app/lib/js/ng-table.js"></script>
+    <script src="./app/lib/js/ui-bootstrap-tpls-1.3.2.min.js"></script>
+    <script src="./app/lib/js/bootstrap-switch.js"></script>
+    <!-- Localization support 
 https://angular-translate.github.io/docs/#/guide/02_getting-started
 -->
-<script src="./app/lib/js/angular-translate.js"></script>
-<script src="./app/lib/js/angular-translate-loader-static-files.js"></script>
-<!-- My files -->
-<script src="app.js"></script>
-<!-- App Facvyory -->
-<script src="./app/factory/ajaxFacory.js"></script>
-<!-- App services files -->
-<script src="./app/service/Employeeservice.js "></script>
-<script src="./app/service/appService.js "></script>
-<!-- app controlers -->
-<script src="./app/controller/userloginCtrl.js"></script>
-<script src="./app/controller/ShippingCtrl.js"></script>
-<script src="./app/controller/storageCtrl.js"></script>
-<script src="./app/controller/formLayoutCtrl.js"></script>
-<script src="./app/controller/loginCtrl.js"></script>
-<script src="./app/controller/dashboardCtrl.js"></script>
-<script src="./app/controller/tabledataCtrl.js"></script>
-<script src="./app/controller/showdataCtrl.js"></script>
-<!-- app constants -->
-<script src="./app/constants/constants.js"></script>
-<!-- app constants -->
-<script src="./app/directives/loginDirective.js"></script>
-<script src="./app/directives/formLayoutDirective.js"></script>
+    <script src="./app/lib/js/angular-translate.js"></script>
+    <script src="./app/lib/js/angular-translate-loader-static-files.js"></script>
+    <!-- My files -->
+    <script src="app.js"></script>
+    <!-- App Facvyory -->
+    <script src="./app/factory/ajaxFacory.js"></script>
+    <!-- App services files -->
+    <script src="./app/service/Employeeservice.js "></script>
+    <script src="./app/service/appService.js "></script>
+    <!-- app controlers -->
+    <script src="./app/controller/userloginCtrl.js"></script>
+    <script src="./app/controller/ShippingCtrl.js"></script>
+    <script src="./app/controller/storageCtrl.js"></script>
+    <script src="./app/controller/formLayoutCtrl.js"></script>
+    <script src="./app/controller/loginCtrl.js"></script>
+    <script src="./app/controller/dashboardCtrl.js"></script>
+    <script src="./app/controller/tabledataCtrl.js"></script>
+    <script src="./app/controller/showdataCtrl.js"></script>
+    <!-- app constants -->
+    <script src="./app/constants/constants.js"></script>
+    <!-- app constants -->
+    <script src="./app/directives/loginDirective.js"></script>
+    <script src="./app/directives/formLayoutDirective.js"></script>
 </head>
 
-<body>
+<body ng-app="mainApp">
     <div>
         <div ng-view class="container"></div>
     </div>
